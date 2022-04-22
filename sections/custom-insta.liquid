@@ -1,0 +1,73 @@
+<section class="instagram">
+  <div class="instagram__inner">
+    <div class="instagram__heading">
+      <h2 class="instagram__title custom-title">{{ section.settings.instagram_title }}</h2>
+      <p class="instagram__tiny">
+        <a href="{{ section.settings.instagram_account-url }}" class="custom-title_sub">@{{ section.settings.instagram_account }}</a>
+      </p>
+    </div>
+    <div id="insta-feed"></div>
+  </div>
+</section>
+
+{% style %}
+  .instagram__inner {
+  margin-bottom: {{ section.settings.twitter_margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .instagram__inner {
+      margin-bottom: {{ section.settings.twitter_margin-md }}px;
+    }
+    .instafeed-container {
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "instagram",
+    "limit": 1,
+    "settings": [
+      {
+        "type":"text",
+        "id": "instagram_title",
+        "label": "タイトル（英語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "instagram_account",
+        "label": "インスタグラムのアカウント名(@以降)を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "twitter_account-url",
+        "label": "ツイッターのプロフィールURLを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "twitter_margin",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "information下の余白(769px〜)"
+      },
+      {
+        "type": "range",
+        "id": "twitter_margin-md",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "information下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "インスタグラム埋め込み"
+      }
+    ]
+  }
+{% endschema %}

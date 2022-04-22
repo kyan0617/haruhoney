@@ -1,0 +1,142 @@
+<section class="category">
+  <div class="category__inner">
+    <div class="category__heading">
+      <h2 class="category__title custom-title">{{ section.settings.custom-category_title-en }}</h2>
+      <p class="category__tiny custom-title_sub">{{ section.settings.custom-category_title-ja }}</p>
+    </div>
+    <ul class="category__list">
+      {% for block in section.blocks %}
+        {% assign category-collection = collections[block.settings.category-collection] %}
+        <li class="category__item">
+          <a href="{{ category-collection.url }}">
+            <div class="category__img">
+              {% if block.settings.category_img == null %}
+                  <img src="{{ 'main-honey.jpg' | asset_img_url }}" alt="">
+                {% else %}
+                  <img src="{{ block.settings.category_img | img_url: 'grande'}}" alt="">
+                {% endif %}
+            </div>
+            <p class="category__text">
+              {{ block.settings.category_text }}
+            </p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% style %}
+  .category__inner {
+    margin-bottom: {{ section.settings.custom-category_margin }}px;
+  }
+  .category__text {
+    font-size: {{ section.settings.custom-category_text }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .category__text {
+      font-size: {{ section.settings.custom-category_text-md }}px;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .category__inner {
+      margin-bottom: {{ section.settings.custom-category_margin-sm }}px;
+    }
+    .category__text {
+      font-size: {{ section.settings.custom-category_text-sm }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "カテゴリー一覧",
+    "max_blocks": 8,
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom-category_title-en",
+        "label": "英語タイトルを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-category_title-ja",
+        "label": "日本語タイトルを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "custom-category_text",
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "default": 22,
+        "label": "テキストサイズ(769px〜)"
+      },
+      {
+        "type": "range",
+        "id": "custom-category_text-md",
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "default": 20,
+        "label": "テキストサイズ(541px〜768px)"
+      },
+      {
+        "type": "range",
+        "id": "custom-category_text-sm",
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "default": 16,
+        "label": "テキストサイズ(〜540px)"
+      },
+      {
+        "type": "range",
+        "id": "custom-category_margin",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "default": 30,
+        "label": "カテゴリーの下の余白（541px〜）"
+      },
+      {
+        "type": "range",
+        "id": "custom-category_margin-sm",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "default": 30,
+        "label": "カテゴリーの下の余白（〜540px）"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category_select",
+        "name": "コレクション",
+        "settings": [
+          {
+            "id": "category-collection",
+            "type": "collection",
+            "label": "コレクションを選択する"
+          },
+          {
+            "id": "category_text",
+            "type": "text",
+            "label": "コレクション名を入力する",
+            "default": "コレクション名"
+          },
+          {
+            "id": "category_img",
+            "type": "image_picker",
+            "label": "コレクションの画像を選択する"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "カテゴリー一覧"
+      }
+    ]
+  }
+{% endschema %}

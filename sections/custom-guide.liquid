@@ -1,0 +1,82 @@
+<section class="guide">
+  <div class="guide__inner">
+    <div class="guide__heading">
+      <p class="guide__category">
+        {{ section.settings.guide_category }}
+      </p>
+      <p class="guide__text">
+        {{ section.settings.guide_category-text }}
+      </p>
+      <div class="guide__button">
+        <a href="{{ section.settings.guide-button-url }}" class="c-button _white">{{ section.settings.guide_button-text }}</a>
+      </div>
+    </div>
+    <ul class="guide__list">
+      {% for block in section.blocks %}
+      <li class="guide__item">
+        <p class="guide__title">
+          {{ block.settings.guide-title }}
+        </p>
+        <p class="guide__text">
+          {{ block.settings.guide-text }}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ご利用ガイド",
+    "settings" : [
+      {
+        "type": "text",
+        "id": "guide_category",
+        "label": "ガイドのカテゴリーを入力",
+        "default": "ご利用ガイドのカテゴリー"
+      },
+      {
+        "type": "textarea",
+        "id": "guide_category-text",
+        "label": "ガイドのカテゴリー内テキストを入力",
+        "default": "ご利用ガイドのカテゴリー内テキスト"
+      },
+      {
+        "type": "url",
+        "id": "guide-button-url",
+        "label": "ガイド内ボタンのURLを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "guide_button-text",
+        "label": "ガイド内ボタンのテキストを入力してください"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "guide-list",
+        "name": "ガイドリスト",
+        "settings": [
+          {
+            "type": "text",
+            "id": "guide-title",
+            "label": "ガイドのタイトルを入力してください",
+            "default": "ご利用ガイドのカテゴリー内タイトルがこちらに表示されます"
+          },
+          {
+            "type": "textarea",
+            "id": "guide-text",
+            "label": "ガイドのテキストを入力してください",
+            "default": "ご利用ガイドのカテゴリー内テキストがこちらに表示されます"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "ご利用ガイド"
+      }
+    ]
+  }
+{% endschema %}

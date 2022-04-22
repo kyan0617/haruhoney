@@ -1,0 +1,157 @@
+{
+  "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#121212",
+    "colors_accent_2": "#334FB4",
+    "colors_text": "#121212",
+    "colors_outline_button_labels": "#121212",
+    "colors_background_1": "#FFFFFF",
+    "colors_background_2": "#F3F3F3",
+    "type_header_font": "assistant_n4",
+    "type_body_font": "assistant_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/TwitterJP",
+    "social_facebook_link": "https:\/\/ja-jp.facebook.com\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "color_scheme": "background-1",
+          "sub_link": "header-top",
+          "header-bar_title": "リキマス卒業制作",
+          "logo": "shopify:\/\/shop_images\/2.png",
+          "logo_width": 250,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "footer-1": {
+            "type": "text",
+            "settings": {
+              "custom-footer_contact_button-url": "shopify:\/\/pages\/contact",
+              "custom-footer_contact_button-text": "お問い合わせ"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1"
+        ],
+        "settings": {
+          "color_scheme": "background-1",
+          "newsletter_enable": true,
+          "newsletter_heading": "メルマガ登録はこちらから ↓",
+          "show_social": false,
+          "enable_country_selector": false,
+          "enable_language_selector": true,
+          "payment_enable": true
+        }
+      },
+      "custom-footer": {
+        "type": "custom-footer",
+        "settings": {
+          "footer_zip": "111-1234",
+          "footer_address-jp": "東京都○○区○○町2-2-16",
+          "footer_phone-jp": "080-1111-2222",
+          "footer_address-en": "2-2-16,marumaru-machi<br>marumaru-ku, Tokyo[111-12341,Japan",
+          "footer_phone-en": "+81-80-1111-2222",
+          "footer_business-hour-jp": "平日 10:00 ~ 17:00（土・日・祝 休み）",
+          "footer_business-hour-en": "Weekdays 10:00-17:00<br> (closed Saturdays, Sundays, and holidays)",
+          "footer_main-list": "footer",
+          "footer_sub-list": "footer-sub",
+          "custom-footer_mail": "メールマガジンの登録はこちら↓",
+          "custom-footer_contact_button-url": "shopify:\/\/pages\/contact",
+          "custom-footer_contact_button-text": "お問い合わせ",
+          "show_social": true
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#FFFFFF",
+      "colors_accent_1": "#121212",
+      "colors_accent_2": "#334FB4",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#FFFFFF",
+      "colors_background_2": "#F3F3F3",
+      "type_header_font": "assistant_n4",
+      "type_body_font": "assistant_n4",
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "blocks": {
+            "announcement-bar-0": {
+              "type": "announcement",
+              "settings": {
+                "color_scheme": "background-1"
+              }
+            }
+          },
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {
+          }
+        }
+      }
+    },
+    "Craft": {
+      "colors_solid_button_labels": "#EFECEC",
+      "colors_accent_1": "#2A332F",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1C1A1A",
+      "colors_outline_button_labels": "#7B8382",
+      "colors_background_1": "#EFECEC",
+      "colors_background_2": "#C1BCAE",
+      "type_header_font": "americana_n4",
+      "type_body_font": "quattrocento_sans_n4",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "menu",
+            "text"
+          ],
+          "settings": {
+            "color_scheme": "accent-1"
+          }
+        }
+      }
+    }
+  }
+}

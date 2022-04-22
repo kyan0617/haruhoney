@@ -1,0 +1,152 @@
+
+<section class="ranking-section">
+{% assign collection = collections[section.settings.collection] %}
+
+<ul class="productsList{% if section.settings.show_ranking %} ranking{% endif %}">
+{% for product in collection.products %}
+  {% if product.available %}
+  <li class="product-item">
+    <div class="rank-badge"><span>{{ forloop.index }}</span></div>
+    
+    {% if product.featured_image == nil %}
+      <figure class="product-thumbnail"><img src="noImage.jpg"></figure>
+    {% else %}
+      <figure class="product-thumbnail"><img src="{{ product.featured_image | img_url:'300x' }}"></figure>
+    {% endif %}
+    <h3 class="product-title">{{ product.title }}</h3>
+    <div class="product-price">
+      {% if product.price_varies %}
+        {{ product.price_min | money }} 〜 {{ product.price_max | money }}
+      {% else %}
+        {{ product.price | money }}
+      {% endif %}
+    </div>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
+ 
+</section>
+ 
+ 
+ {% schema %}
+ 
+ {
+   "name": "人気ランキング",
+   "class": "main-ranking",
+   "max_blocks": 4,
+   "settings": [
+     {
+       "type": "collection",
+       "id": "collection",
+       "label": "タイトル"
+     },
+	 {
+       "type": "color",
+       "id": "color_num",
+       "label": "文字カラー",
+       "default": "#fff "
+     },
+	 {
+    "type": "checkbox",
+    "id": "show_ranking",
+    "label": "ランキングアイコンを表示する",
+    "default": false
+	 }
+   ],
+   "blocks": [
+
+    ],
+     "presets": [
+     {
+       "name": "人気ランキング"
+     }
+   ]
+ 
+    
+ }
+ 
+ {% endschema %}
+ 
+ 
+ {% style %}
+
+
+
+ .ranking-section {
+    margin:50px;
+ }
+
+ .productsList {
+    display:flex;
+    justify-content :center;
+    list-style:none;
+    padding:0;
+    width:100%;
+ }
+ 
+ .product-item {
+    width: calc(23%);
+    margin: 10px 20px;
+	position:relative;
+	justify-content:center;
+ }
+
+ .product-item figure {
+	margin:0px;
+ }
+
+
+
+ .product-thumbnail img {
+	max-width:100%;
+ }
+
+
+.product-item .rank-badge {
+		position:absolute;
+		top:-15px;
+		left:-15px;
+        display: block;
+        width: 2em;
+        height: 2em;
+        font-weight: 700;
+        line-height: 2;
+        text-align: center;
+        color: #999;
+        background-color: #fff;
+        border: 1px solid #999;
+        border-radius: 50%;
+    }
+
+.product-item:nth-child(-n+3) .rank-badge {
+        color: #fff;
+        border: none;
+    }
+
+.product-item:first-child .rank-badge {
+        background-color: #c90;
+    }
+ 
+.product-item:nth-child(2) .rank-badge {
+        background-color: #999;
+    }
+
+.product-item:nth-child(3) .rank-badge {
+        background-color: #633;
+    }
+
+
+ 
+ @media only screen and (min-width: 768px) {
+
+ }
+ 
+ @media only screen and (max-width: 767px) {
+
+ }
+
+
+
+ 
+ {% endstyle %}

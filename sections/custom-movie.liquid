@@ -1,0 +1,77 @@
+<section class="custom-movie">
+  <div class="custom-movie__inner">
+    <div class="custom-movie__heading">
+      <h2 class="custom-movie__title custom-title">{{section.settings.custom-movie_title}}</h2>
+      <p class="custom-movie__tiny custom-title_sub">{{ section.settings.custom-movie_sub}}</p>
+    </div>
+    <div class="custom-movie__content">
+      <a href="{{ section.settings.custom-movie_url }}" class="custom-movie__main">
+        <img src="{{ section.settings.custom-movie_image | img_url: 'master' }}" alt="">
+      </a>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .custom-movie__inner {
+    margin-bottom: {{ section.settings.custom-movie_margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .custom-movie__inner {
+      margin-bottom: {{ section.settings.custom-movie_margin-md }}px;
+    }  
+  }
+}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "カスタムムービー",
+    "class": "width1200",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom-movie_title",
+        "label": "タイトルを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-movie_sub",
+        "label": "サブタイトルを入力してください"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom-movie_image",
+        "label": "サムネイル画像を選択してください"
+      },
+      {
+        "type": "url",
+        "id": "custom-movie_url",
+        "label": "動画のURLを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "custom-movie_margin",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "動画下の余白(pc)"
+      },
+      {
+        "type": "range",
+        "id": "custom-movie_margin-md",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "動画下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "カスタムムービー"
+      }
+    ]
+  }
+{% endschema %}

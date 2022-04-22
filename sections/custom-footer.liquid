@@ -1,0 +1,220 @@
+<section class="custom-footer">
+  <div class="custom-footer__inner">
+    <div class="custom-footer__content">
+      <div class="custom-footer__about">
+        <div class="custom-footer__logo">
+          <img src="{{ 'harunohachimitsu_logo.png' | asset_url }}" alt="">
+        </div>
+        <div class="custom-footer__address">
+          <p class="custom-footer__address-jp">
+            {{ shop.address.company }}<br>
+            〒{{ section.settings.footer_zip }}<br>
+            {{ section.settings.footer_address-jp }}
+            <br>
+            電話：{{ section.settings.footer_phone-jp }}<br>
+            営業時間：{{ section.settings.footer_business-hour-jp }}
+          </p>
+          <p class="custom-footer__address-en">
+            {{ section.settings.footer_address-en }}<br>
+            Phone：{{ section.settings.footer_phone-en }}<br>
+            Business hours：{{ section.settings.footer_business-hour-en }}
+          </p>
+        </div>
+      </div>
+      <div class="custom-footer__menu">
+        <ul class="custom-footer__main-list">
+          {% for link in linklists[ section.settings.footer_main-list ].links %}
+            <li class="custom-footer__main-item">
+              <a href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="custom-footer__sub-list">
+          {% for link in linklists[ section.settings.footer_sub-list ].links %}
+            <li class="custom-footer__sub-item">
+              <a href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="custom-footer__contact">
+        <div class="custom-footer__button">
+          <a href="{{ section.settings.custom-footer_contact_button-url }}" class="c-button _white">{{ section.settings.custom-footer_contact_button-text }}</a>
+          <span class="custom-footer__button-icon">
+            <img src="{{ 'mail-icon.svg' | asset_url }}" alt="">
+            <img src="{{ 'mail-icon-w.svg' | asset_url }}" alt="">
+          </span>
+        </div>
+        <div class="custom-footer__mail-mag">
+          <p class="custom-footer__mail-head">
+            {{ section.settings.custom-footer_mail }}
+          </p>
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter-form__field-wrapper">
+              <div class="field">
+                <input
+                  id="NewsletterForm--{{ section.id }}"
+                  type="email"
+                  name="contact[email]"
+                  class="field__input"
+                  value="{{ form.email }}"
+                  aria-required="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    autofocus
+                    aria-invalid="true"
+                    aria-describedby="ContactFooter-error"
+                  {% elsif form.posted_successfully? %}
+                    aria-describedby="ContactFooter-success"
+                  {% endif %}
+                  placeholder="{{ 'newsletter.label' | t }}"
+                  required
+                >
+                <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                  {{ 'newsletter.label' | t }}
+                </label>
+                <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+                  <span class="newsletter-arrow"></span>
+                </button>
+              </div>
+              {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+              {%- endif -%}
+            </div>
+            {%- if form.posted_successfully? -%}
+              <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+            {%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+    <div class="custom-footer__bottom">
+      {%- if section.settings.show_social -%}
+        <ul class="custom-footer__sns-list">
+          {%- if settings.social_facebook_link != blank -%}
+            <li class="custom-footer__sns-item">
+              <a href="{{ settings.social_facebook_link }}" target="_blank" rel="noopener noreferrer"><img src="{{ 'facebook-icon.svg' | asset_url }}" alt=""></a>
+            </li>
+          {%- endif -%}
+          {%- if settings.social_twitter_link != blank -%}
+            <li class="custom-footer__sns-item">
+              <a href="{{ settings.social_twitter_link }}" target="_blank" rel="noopener noreferrer"><img src="{{ 'twitter-icon.svg' | asset_url }}" alt=""></a>
+            </li>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+            <li class="custom-footer__sns-item">
+              <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener noreferrer"><img src="{{ 'instagram-icon.svg' | asset_url }}" alt=""></a>
+            </li>
+          {%- endif -%}
+          {%- if settings.social_youtube_link != blank -%}
+            <li class="custom-footer__sns-item">
+              <a href="{{ settings.social_youtube_link }}" target="_blank" rel="noopener noreferrer"><img src="{{ 'youtube-icon.svg' | asset_url }}" alt=""></a>
+            </li>
+          {%- endif -%}
+        </ul>
+      {%- endif -%}
+      <ul class="custom-footer__policy-list">
+        {% for link in linklists['policy-menu'].links %}
+          <li class="custom-footer__policy-item">
+            <a href="{{ link.url }}">{{ link.title | escape }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer__copyright">
+    <p>&copy; 2022 {{ shop.name }}</p>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "カスタムフッター",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_zip",
+        "default": "000-0000",
+        "label": "郵便番号を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_address-jp",
+        "default": "address",
+        "label": "日本語の住所を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_phone-jp",
+        "default": "電話番号",
+        "label": "日本語の電話番号を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_address-en",
+        "default": "address",
+        "label": "英語の住所を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_phone-en",
+        "default": "phone-number",
+        "label": "英語の電話番号を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_business-hour-jp",
+        "default": "10:00 ~ 17:00",
+        "label": "日本語の営業時間を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "footer_business-hour-en",
+        "default": "10:00 ~ 17:00",
+        "label": "英語の営業時間を入力してください"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_main-list",
+        "label": "フッターのメインメニューを選択してください"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_sub-list",
+        "label": "フッターのサブメニューを選択してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-footer_mail",
+        "default": "メールマガジンの登録はこちら↓",
+        "label": "メールマガジン登録メッセージ"
+      },
+      {
+        "id": "custom-footer_contact_button-url",
+        "type": "url",
+        "label": "ボタンのURLを入力してください"
+      },
+      {
+        "id": "custom-footer_contact_button-text",
+        "type": "text",
+        "label": "ボタンのテキストを入力してください",
+        "default": "ボタンのテキスト"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": false,
+        "label": "t:sections.footer.settings.show_social.label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "カスタムフッター"
+      }
+    ]
+  }
+{% endschema %}

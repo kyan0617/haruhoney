@@ -1,0 +1,104 @@
+<section class="information">
+  <div class="information__inner">
+    <div class="information__heading">
+      <h2 class="information__title custom-title">{{ section.settings.custom-info_title }}</h2>
+      <p class="information__tiny custom-title_sub">{{ section.settings.custom-info_tiny }}</p>
+      <div class="information__button _pc-only">
+        <a href="{{ section.settings.custom-info_button-url }}" class="c-button _white">{{ section.settings.custom-info_button }}</a>
+      </div>
+    </div>
+    <div class="information__content">
+      <ul class="information__list">
+        {%- for article in section.settings.information.articles limit: section.settings.info-post_limit -%}
+        <li class="information__item">
+          <a href="{{ article.url }}">
+            <span class="information__date">{{ article.published_at | date: "%Y . %m . %d"}}</span>
+            <p class="information__info-title">{{ article.title }}</p>
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="information__button _sp-only">
+      <a href="{{ section.settings.custom-info_button-url }}" class="c-button _white">{{ section.settings.custom-info_button }}</a>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .information__inner {
+    margin-bottom: {{ section.settings.custom-info_margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .information__inner {
+      margin-bottom: {{ section.settings.custom-info_margin-md }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "お知らせ一覧表示",
+    "class": "width1200",
+    "limit": 1,
+    "settings": [
+      {
+        "type":"text",
+        "id": "custom-info_title",
+        "label": "タイトル（英語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-info_tiny",
+        "label": "タイトル（日本語）を入力してください"
+      },
+      {
+        "type": "blog",
+        "id": "information",
+        "label": "ブログを選択"
+      },
+      {
+        "type": "range",
+        "id": "info-post_limit",
+        "min": 3,
+        "max": 6,
+        "step": 1,
+        "default": 3,
+        "label": "記事表示数"
+      },  
+      {
+        "type": "text",
+        "id": "custom-info_button",
+        "label": "ボタンのテキストを入力してください"
+      },
+      {
+        "type": "url",
+        "id": "custom-info_button-url",
+        "label": "ボタンのリンクを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "custom-info_margin",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "information下の余白(769px〜)"
+      },
+      {
+        "type": "range",
+        "id": "custom-info_margin-md",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "information下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "お知らせ一覧表示"
+      }
+    ]
+  }
+{% endschema %}

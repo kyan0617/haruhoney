@@ -1,0 +1,93 @@
+<section class="banner">
+  <div class="banner__inner">
+    <div class="banner__img">
+      <img src="{{ section.settings.banner_image-medium | img_url: 'master' }}" alt="">
+    </div>
+    <div class="banner__content">
+      <div class="banner__heading">
+        <h2 class="banner__title custom-title">{{ section.settings.banner_title-en }}</h2>
+        <p class="banner__tiny custom-title_sub">{{ section.settings.banner_title-ja }}</p>
+      </div>
+      <div class="banner__text">
+        <p>
+          {{ section.settings.banner_text }}
+        </p>
+      </div>
+      <div class="banner__button">
+        <a href="{{ section.settings.banner_button-url }}" class="c-button _white">{{ section.settings.banner_button-text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .banner__inner {
+    margin-bottom: {{ section.settings.banner_margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .banner__inner {
+      margin-bottom: {{ section.settings.banner_margin-md }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "メディアバナー",
+    "settings": [
+      {
+        "type": "text",
+        "id": "banner_title-en",
+        "label": "英語タイトルを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "banner_title-ja",
+        "label": "日本語タイトルを入力してください"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image-medium",
+        "label": "画像を選択してください"
+      },
+      {
+        "type": "textarea",
+        "id": "banner_text",
+        "label": "テキストを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "banner_button-text",
+        "label": "ボタンのテキストを入力してください"
+      },
+      {
+        "type": "url",
+        "id": "banner_button-url",
+        "label": "ボタンのリンクを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "banner_margin",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "メディアバナー下の余白(769px〜)"
+      },
+      {
+        "type": "range",
+        "id": "banner_margin-md",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "メディアバナー下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "メディアバナー"
+      }
+    ]
+  }
+{% endschema %}

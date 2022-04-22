@@ -1,0 +1,66 @@
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__title">
+      <p>{{ section.settings.faq-title }}</p>
+    </div>
+    <ul class="faq__list">
+      {% for block in section.blocks %}
+      <li class="faq__item">
+        <div class="faq__question">
+          <p>
+            {{ block.settings.faq-question }}
+          </p>
+          <div class="faq__button">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="faq__answer">
+          <p>
+            {{ block.settings.faq-answer }}
+          </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "よくある質問",
+    "settings": [
+      {
+        "type": "text",
+        "id": "faq-title",
+        "label": "質問カテゴリーを入力してください",
+        "default": "ここに質問カテゴリーが入ります"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq-category",
+        "name": "カテゴリー別よくある質問",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq-question",
+            "label": "質問内容を入力してください",
+            "default": "質問内容がここに入ります。"
+          },
+          {
+            "type": "textarea",
+            "id": "faq-answer",
+            "label": "質問の回答を入力してください",
+            "default": "質問の回答がここに入ります。"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "よくある質問"
+      }
+    ]
+  }
+{% endschema %}

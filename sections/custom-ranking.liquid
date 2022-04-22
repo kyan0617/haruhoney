@@ -1,0 +1,126 @@
+<section class="ranking">
+  {% assign collection = collections[section.settings.rank-collection] %}
+
+  <div class="ranking__inner">
+    <div class="ranking__heading">
+      <h2 class="ranking__title custom-title">{{ section.settings.rank-title_en }}</h2>
+      <p class="ranking__tiny custom-title_sub">{{ section.settings.rank-title_jp }}</p>
+    </div>
+    <ul class="ranking__list">
+      {% for product in collection.products limit: section.settings.rank-limit%}
+        <li class="ranking__item">
+          <a href="{{ product.url }}">
+            <div class="ranking__img">
+              {% if product.featured_image == null %}
+                <img src="{{ 'main-honey.jpg' | asset_img_url }}" alt="">
+              {% else %}
+                <img src="{{ product.featured_image | image_url }}" alt="">
+              {% endif %}
+              
+              <span class="ranking__label">{{ forloop.index }}</span>
+            </div>
+            <div class="ranking__detail">
+              <span class="ranking__collection">
+                {% for tag in product.tags %}
+                  {% if tag contains 'tag_' %}
+                    {{ tag | split: '_' | last }}
+                  {% endif %}
+                {% endfor %}
+              </span>
+              <p class="ranking__product">{{ product.title }}</p>
+              <p class="ranking__price">
+                {% if product.price_varies %}
+                  {{ product.price_min | money }} 〜 {{ product.price_max | money }}
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+                </p>
+                <span class="ranking__include-tax">（税込）</span>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% style %}
+  {% assign rankLimitValue = section.settings.rank-limit | modulo:3 %}
+  .ranking__list {
+    {% if rankLimitValue == 0 %}
+      grid-template-columns: repeat(3, 1fr);
+    {% else %}
+      grid-template-columns: repeat(4, 1fr);
+    {% endif %}
+  }
+  .ranking__inner {
+    margin-bottom: {{ section.settings.rank-margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .ranking__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ranking__inner {
+      margin-bottom: {{ section.settings.rank-margin_md }}px;
+    }  
+  }
+
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "人気商品ランキング",
+    "class": "product-ranking",
+    "settings": [
+      {
+        "type": "text",
+        "id": "rank-title_en",
+        "label": "タイトル（英語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "rank-title_jp",
+        "label": "タイトル（日本語）を入力してください"
+      },
+      {
+        "type": "collection",
+        "id": "rank-collection",
+        "label": "コレクションを選択してください"
+      },
+      {
+        "type": "range",
+        "id": "rank-limit",
+        "min": 4,
+        "max": 8,
+        "step": 2,
+        "default": 4,
+        "label": "ランキング表示数"
+      },
+      {
+        "type": "range",
+        "id": "rank-margin",
+        "min": 60,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "ランキング下の余白(pc)"
+      },
+      {
+        "type": "range",
+        "id": "rank-margin_md",
+        "min": 60,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "ランキング下の余白(sp)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "人気商品ランキング"
+      }
+    ]
+  }
+
+{% endschema %}

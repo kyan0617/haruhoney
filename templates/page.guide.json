@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-guide-template",
+      "settings": {
+      }
+    },
+    "164663660688f9c104": {
+      "type": "custom-guide",
+      "blocks": {
+        "73b99f67-6d61-4090-a822-66da4f49f762": {
+          "type": "guide-list",
+          "settings": {
+            "guide-title": "日時指定・時間指定が可能です。",
+            "guide-text": "配送希望日は、4営業日以降での指定が可能です。ご指定日がない場合は最短でのお届けとなります。"
+          }
+        },
+        "c255aee4-7b1f-4e1f-86b8-6f27979ae9d0": {
+          "type": "guide-list",
+          "settings": {
+            "guide-title": "ギフト配送もできます。",
+            "guide-text": "ギフト配送ご希望のお客様は、ご注文時に「ギフト包装」をご選択ください。一部商品を除いてギフトセット商品以外の単品商品でもギフト包装が可能です。"
+          }
+        }
+      },
+      "block_order": [
+        "73b99f67-6d61-4090-a822-66da4f49f762",
+        "c255aee4-7b1f-4e1f-86b8-6f27979ae9d0"
+      ],
+      "settings": {
+        "guide_category": "商品のお届け",
+        "guide_category-text": "ご注文確定後2営業日以内に発送いたします。",
+        "guide-button-url": "",
+        "guide_button-text": ""
+      }
+    },
+    "1646637771ac97a3de": {
+      "type": "custom-guide",
+      "settings": {
+        "guide_category": "特定商取引法に基づく表示",
+        "guide_category-text": "特定商取引法に基づく表示については、下記のページをご確認ください。",
+        "guide-button-url": "shopify:\/\/policies\/legal-notice",
+        "guide_button-text": "特定商取引法に基づく表示"
+      }
+    },
+    "1646638320b1aa25fd": {
+      "type": "custom-guide",
+      "settings": {
+        "guide_category": "プライバシーポリシー",
+        "guide_category-text": "プライバシーポリシーについては以下のページをご確認ください。",
+        "guide-button-url": "shopify:\/\/policies\/privacy-policy",
+        "guide_button-text": "プライバシーポリシー"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164663660688f9c104",
+    "1646637771ac97a3de",
+    "1646638320b1aa25fd"
+  ]
+}

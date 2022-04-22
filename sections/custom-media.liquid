@@ -1,0 +1,126 @@
+<section class="custom-media">
+  <div class="custom-media__inner">
+    <div class="custom-media__image">
+      <img src="{{ section.settings.custom-media_image | img_url: 'master' }}" alt="">
+    </div>
+    <div class="custom-media__content">
+      <div class="custom-media__title">
+        <h2 class="custom-media__en custom-title custom-media_text-color text-color--{{ section.id }}">{{ section.settings.custom-media_title }}</h2>
+        <p class="custom-media__jp custom-title_sub custom-media_text-color text-color--{{ section.id }}">
+          {{ section.settings.custom-media_tiny }}
+        </p>
+      </div>
+      <p class="custom-media__text custom-media_text-color text-color--{{ section.id }}">
+        {{ section.settings.custom-media_text }}
+      </p>
+      <div class="custom-media__button">
+        <a href="{{ section.settings.custom-media_button-url }}" class="c-button _color--{{ section.id }}">{{ section.settings.custom-media_button }}</a>
+      </div>
+    </div>
+    {% style %}
+      .text-color--{{ section.id }} {
+        color: {{ section.settings.custom-media_text-color }};
+      }
+      .text-color--{{ section.id }}.custom-media__jp::before,
+      .text-color--{{ section.id }}.custom-media__jp::after {
+        background-color: {{ section.settings.custom-media_text-color }};
+      }
+      .c-button._color--{{ section.id }} {
+        background-color: {{ section.settings.c-button_bg }};
+        color: {{ section.settings.c-button_text }};
+      }
+      .c-button._color--{{ section.id }}:hover {
+        background-color: {{ section.settings.c-button_text }};
+        color: {{ section.settings.c-button_bg }};
+      }
+      .custom-media__inner {
+        margin-bottom: {{ section.settings.custom-media_margin }}px
+      }
+      @media screen and (max-width: 768px) {
+        .custom-media__inner {
+          margin-bottom: {{ section.settings.custom-media_margin-md }}px
+        }  
+      }
+    {% endstyle %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "カスタムメディア",
+    "class": "width1200",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "custom-media_image",
+        "label": "画像を選択してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-media_title",
+        "label": "タイトル（英語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-media_tiny",
+        "label": "タイトル（日本語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-media_text",
+        "label": "テキストを入力してください"
+      },
+      {
+        "type": "color",
+        "id": "custom-media_text-color",
+        "label": "テキストの色",
+        "default": "#fff"
+      },
+      {
+        "type": "text",
+        "id": "custom-media_button",
+        "label": "ボタンのテキストを入力してください"
+      },
+      {
+        "type": "url",
+        "id": "custom-media_button-url",
+        "label": "ボタンのリンクを入力してください"
+      },
+      {
+        "type": "color",
+        "id": "c-button_text",
+        "label": "ボタンのテキストカラー",
+        "default": "#101111"
+      },
+      {
+        "type": "color",
+        "id": "c-button_bg",
+        "label": "ボタンの背景カラー",
+        "default": "#fff"
+      },
+      {
+        "type": "range",
+        "id": "custom-media_margin",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "メディア下の余白(pc)"
+      },
+      {
+        "type": "range",
+        "id": "custom-media_margin-md",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "メディア下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+      "name": "カスタムメディア"
+      }
+    ]
+  }
+{% endschema %}

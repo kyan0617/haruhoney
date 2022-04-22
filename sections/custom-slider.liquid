@@ -1,0 +1,211 @@
+<section id="CustomSlider" class="custom-slider">
+  <div class="custom-slider__inner">
+    <ul class="custom-slider__list custom-slider">
+      {% for block in section.blocks %}
+        <li class="custom-slider__item slider--{{ block.id }}">
+          <picture class="custom-slider__bg">
+            <source srcset="{{ block.settings.slider-image | img_url : "master" }}" media="(min-width: 540px)" />
+            <img src="{{ block.settings.slider-image_md | img_url : "master" }}" alt="">
+          </picture>
+          <span class="custom-slider__overlay"></span>
+          <div class="custom-slider__box">
+            <div class="custom-slider__logo">
+              <img src="{{ block.settings.slider-logo | img_url : "large" }}" alt="">
+            </div>
+            <p class="custom-slider__title">
+              {{ block.settings.slider-title }}
+            </p>
+            <div class="custom-slider__button">
+              <a href="{{ block.settings.slider-button_link}}" class="c-button _white">{{ block.settings.slider-button_text }}</a>
+            </div>    
+          </div>
+        </li>    
+      {% endfor %}
+    </ul>
+    <div class="custom-slider__arrow">
+        <div class="slick-counter">
+          <span class="current"></span> / <span class="total"></span>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .custom-slider__title {
+    font-size: {{ section.settings.slider-title-size }}px;
+  }
+  .custom-slider__inner {
+    margin-bottom: {{ section.settings.slider-margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .custom-slider__title {
+      font-size: {{ section.settings.slider-title-size_md }}px;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .custom-slider__title {
+      font-size: {{ section.settings.slider-title-size_sm }}px;
+    }
+    .custom-slider__inner {
+      margin-bottom: {{ section.settings.slider-margin_sm }}px;
+    }
+  }
+  {% endstyle %}
+
+  {% for block in section.blocks %}
+    {% style %}
+      .slider--{{ block.id }} .custom-slider__title {
+        color: {{ block.settings.slider-text-color }};
+      }
+      .slider--{{ block.id }} .custom-slider__box {
+        top: {{ block.settings.slider-top }}px;
+        left: {{ block.settings.slider-left }}vw;
+      }
+      @media screen and (max-width: 540px) {
+        .slider--{{ block.id }} .custom-slider__box {
+          top: {{ block.settings.slider-top_sp }}px;
+          left: {{ block.settings.slider-left_sp }}vw;
+        }  
+      }
+    {% endstyle %}
+  {% endfor%}
+
+{% schema %}
+  {
+    "name": "スライダー",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "range",
+        "id": "slider-title-size",
+        "min": 14,
+        "max": 40,
+        "step": 1,
+        "default": 24, 
+        "label": "タイトルサイズ（769px〜）"
+      },
+      {
+        "type": "range",
+        "id": "slider-title-size_md",
+        "min": 14,
+        "max": 40,
+        "step": 1,
+        "default": 24, 
+        "label": "タイトルサイズ（541px〜768px）"
+      },
+      {
+        "type": "range",
+        "id": "slider-title-size_sm",
+        "min": 14,
+        "max": 40,
+        "step": 1,
+        "default": 24, 
+        "label": "タイトルサイズ(〜540px)"
+      },
+      {
+        "type": "range",
+        "id": "slider-margin",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "default": 30,
+        "label": "スライダーの下の余白(541px〜)"
+      },
+      {
+        "type": "range",
+        "id": "slider-margin_sm",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "default": 30,
+        "label": "スライダーの下の余白(〜540px)"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slider_select",
+        "name": "画像",
+        "settings": [
+          {
+            "id": "slider-image",
+            "type": "image_picker",
+            "label": "画像を選択する（541px〜）"
+          },
+          {
+            "id": "slider-image_md",
+            "type": "image_picker",
+            "label": "画像を選択する（〜540px）"
+          },
+          {
+            "id": "slider-logo",
+            "type": "image_picker",
+            "label": "ロゴ画像を選択する"
+          },
+          {
+            "id": "slider-title",
+            "type": "textarea",
+            "label": "タイトル"
+          },
+          {
+            "id": "slider-text-color",
+            "type": "color",
+            "label": "文字の色",
+            "default": "#fff"
+          },
+          {
+            "id": "slider-top",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 50,
+            "label": "テキスト上の位置調整(541px〜)"
+          },
+          {
+            "id": "slider-top_sp",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 50,
+            "label": "テキスト上の位置調整(〜540px)"
+          },
+          {
+            "id": "slider-left",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 0,
+            "label": "テキスト左の位置調整(541px〜)"
+          },
+          {
+            "id": "slider-left_sp",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 0,
+            "label": "テキスト左の位置調整(〜540px)"
+          },
+          {
+            "id": "slider-button_text",
+            "type": "text",
+            "label": "スライダーボタンのテキスト"
+          },
+          {
+            "id": "slider-button_link",
+            "type": "url",
+            "label": "スライダーボタンのURL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "スライダー"
+      }
+    ]
+  }
+{% endschema %}
+

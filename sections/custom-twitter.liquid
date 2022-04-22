@@ -1,0 +1,71 @@
+<section class="twitter">
+  <div class="twitter__inner">
+    <div class="twitter__heading">
+      <h2 class="twitter__title custom-title">{{ section.settings.twitter_title }}</h2>
+      <p class="twitter__tiny">
+        <a href="{{ section.settings.twitter_account-url }}" class="custom-title_sub">@{{ section.settings.twitter_account }}</a>
+      </p>
+    </div>
+    <div class="twitter__content">
+      <a class="twitter-timeline" href="https://twitter.com/{{ section.settings.twitter_account }}?ref_src=twsrc%5Etfw" data-tweet-limit="1" data-chrome="noheader  nofooter noborders"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .twitter__inner {
+    margin-bottom: {{ section.settings.twitter_margin }}px;
+  }
+  @media screen and (max-width: 768px) {
+    .twitter__inner {
+      margin-bottom: {{ section.settings.twitter_margin-md }}px;
+    }
+  } 
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "ツイッター表示",
+    "limit": 1,
+    "settings": [
+      {
+        "type":"text",
+        "id": "twitter_title",
+        "label": "タイトル（英語）を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "twitter_account",
+        "label": "ツイッターのアカウント名(@以降)を入力してください"
+      },
+      {
+        "type": "text",
+        "id": "twitter_account-url",
+        "label": "ツイッターのプロフィールURLを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "twitter_margin",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "twitter下の余白(769px〜)"
+      },
+      {
+        "type": "range",
+        "id": "twitter_margin-md",
+        "min": 0,
+        "max": 270,
+        "step": 5,
+        "default": 120,
+        "label": "twitter下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "ツイッター埋め込み"
+      }
+    ]
+  }
+{% endschema %}

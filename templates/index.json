@@ -1,0 +1,283 @@
+{
+  "sections": {
+    "16457683485b13d0d5": {
+      "type": "custom-slider",
+      "blocks": {
+        "9f3385a2-2a6c-4d7f-b7ca-32e3a7bbd989": {
+          "type": "slider_select",
+          "settings": {
+            "slider-image": "shopify:\/\/shop_images\/4014104_m_e8319087-31fa-4a6c-a9c3-d724e0dc9a31.jpg",
+            "slider-image_md": "shopify:\/\/shop_images\/danika-perkinson-ZhA9vZQPTeE-unsplash_089b080d-32bf-4e8d-9936-b0764b361942.jpg",
+            "slider-logo": "shopify:\/\/shop_images\/550397_74842084-ca02-49ea-8299-2b17a5e699da.png",
+            "slider-title": "自然の恵みを<br>\n瓶いっぱいに詰めこんで<br>\nお届けします<br>",
+            "slider-text-color": "#ffffff",
+            "slider-top": 50,
+            "slider-top_sp": 42,
+            "slider-left": 8,
+            "slider-left_sp": 8,
+            "slider-button_text": "商品一覧",
+            "slider-button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "5d464e91-eead-4665-ad7c-b136a08ecbe5": {
+          "type": "slider_select",
+          "settings": {
+            "slider-image": "shopify:\/\/shop_images\/louis-mornaud-6nQS4pJfdRQ-unsplash_4673ab89-93a0-4737-848c-2f423f2ff843.jpg",
+            "slider-image_md": "shopify:\/\/shop_images\/heather-barnes-gP1YecpRyD8-unsplash.jpg",
+            "slider-logo": "shopify:\/\/shop_images\/168542.png",
+            "slider-title": "やさしい甘さの<br>\nはちみつスイーツで<br>\nほっと一息<br>",
+            "slider-text-color": "#ffffff",
+            "slider-top": 50,
+            "slider-top_sp": 80,
+            "slider-left": 9,
+            "slider-left_sp": 13,
+            "slider-button_text": "はちみつスイーツ",
+            "slider-button_link": "shopify:\/\/collections\/sweets"
+          }
+        },
+        "c75cc8da-bb63-4511-84da-76729c719f21": {
+          "type": "slider_select",
+          "settings": {
+            "slider-image": "shopify:\/\/shop_images\/kelly-sikkema-clw6dHJYusQ-unsplash_1.jpg",
+            "slider-image_md": "shopify:\/\/shop_images\/yuliia-tretynychenko-_agnXG7oD-4-unsplash.jpg",
+            "slider-logo": "shopify:\/\/shop_images\/167998.png",
+            "slider-title": "はちみつが毎日を<br>\nちょっぴり幸せに<br>\nしてくれます<br>",
+            "slider-text-color": "#ffffff",
+            "slider-top": 50,
+            "slider-top_sp": 64,
+            "slider-left": 9,
+            "slider-left_sp": 9,
+            "slider-button_text": "はちみつグッズ",
+            "slider-button_link": "shopify:\/\/collections\/goods"
+          }
+        }
+      },
+      "block_order": [
+        "9f3385a2-2a6c-4d7f-b7ca-32e3a7bbd989",
+        "5d464e91-eead-4665-ad7c-b136a08ecbe5",
+        "c75cc8da-bb63-4511-84da-76729c719f21"
+      ],
+      "settings": {
+        "slider-title-size": 24,
+        "slider-title-size_md": 20,
+        "slider-title-size_sm": 18,
+        "slider-margin": 120,
+        "slider-margin_sm": 60
+      }
+    },
+    "1645428946ce5c2f99": {
+      "type": "custom-about",
+      "settings": {
+        "custom-about_image-large": "shopify:\/\/shop_images\/honey_block_70eea0fe-e114-426c-9229-00951be060a3.jpg",
+        "custom-about_image-medium": "shopify:\/\/shop_images\/honey_flower_88dd7b3f-8f61-4e8d-8b10-1be4a81bf7b7.jpg",
+        "custom-about_image-small": "shopify:\/\/shop_images\/honey_pod.jpg",
+        "custom-about_title-en": "about",
+        "custom-about_title-ja": "はるのはちみつについて",
+        "custom-about_text": "はるのはちみつは<br>\n柔らかな甘味で心と体に<br>\n癒しをお届けします<br>\nみつばちの恵みを通して<br>\nみなさまに笑顔が溢れますように<br>",
+        "custom-about_button-text": "BEE Smiling",
+        "custom-about_button-url": "shopify:\/\/products\/kokusan-hachimitsu",
+        "custom-about_margin": 185,
+        "custom-about_margin_lg": 150,
+        "custom-about_margin_md": 105
+      }
+    },
+    "1643186412a82c9475": {
+      "type": "custom-media",
+      "settings": {
+        "custom-media_image": "shopify:\/\/shop_images\/alexander-mils-nesUgwNX3u4-unsplash_1_2a96121b-099d-40a1-b776-55b7f69849eb.jpg",
+        "custom-media_title": "brand",
+        "custom-media_tiny": "ブランド",
+        "custom-media_text": "とれたてにこだわった<br>自然な甘みの<br>純粋国産はちみつ",
+        "custom-media_text-color": "#593b1c",
+        "custom-media_button": "もっと見る",
+        "custom-media_button-url": "shopify:\/\/pages\/brand",
+        "c-button_text": "#ffdf7e",
+        "c-button_bg": "#593b1c",
+        "custom-media_margin": 115,
+        "custom-media_margin-md": 80
+      }
+    },
+    "164524567968e6abb6": {
+      "type": "custom-movie",
+      "settings": {
+        "custom-movie_title": "MOVIE",
+        "custom-movie_sub": "はちみつができるまで",
+        "custom-movie_image": "shopify:\/\/shop_images\/movie-thumb.jpg",
+        "custom-movie_url": "https:\/\/www.youtube.com\/embed\/bGEk8jwZwRo?rel=0",
+        "custom-movie_margin": 180,
+        "custom-movie_margin-md": 110
+      }
+    },
+    "16456705618c71dbd4": {
+      "type": "custom-ranking",
+      "settings": {
+        "rank-title_en": "ranking",
+        "rank-title_jp": "人気商品ランキング",
+        "rank-collection": "all_products",
+        "rank-limit": 4,
+        "rank-margin": 120,
+        "rank-margin_md": 120
+      }
+    },
+    "16461057492242a72e": {
+      "type": "custom-category",
+      "blocks": {
+        "c022ecad-56d1-4d32-bc21-d34b3f8e0a07": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "domestic",
+            "category_text": "純粋国産はちみつ",
+            "category_img": "shopify:\/\/shop_images\/maja-jugovic-30ONKKpThbc-unsplash.jpg"
+          }
+        },
+        "1bfd07d6-2cfb-42ee-86f2-2b32c65d7db6": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "flavor",
+            "category_text": "フレーバーはちみつ",
+            "category_img": "shopify:\/\/shop_images\/naina-pahuja-5PyTy8sV_cE-unsplash_c9695037-c833-44d9-be77-0787b9e27b6d.jpg"
+          }
+        },
+        "688bb75c-e200-4338-8c57-68c28c57ee88": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "manuka-honey",
+            "category_text": "マヌカハニー",
+            "category_img": "shopify:\/\/shop_images\/sonja-langford-RQHzRELE2Ss-unsplash.jpg"
+          }
+        },
+        "956aedc0-26ee-4a3f-b08e-6c9d094fc350": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "sweets",
+            "category_text": "スイーツ",
+            "category_img": "shopify:\/\/shop_images\/22083800_s.jpg"
+          }
+        },
+        "124a58bf-8700-4bb2-9193-8be8a512ed8b": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "honey-candy",
+            "category_text": "はちみつ飴",
+            "category_img": "shopify:\/\/shop_images\/3853898_s.jpg"
+          }
+        },
+        "dd8c037a-8154-4723-a77a-2d37897c81ec": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "プロポリス",
+            "category_text": "プロポリス",
+            "category_img": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-meFBqAS1OPY-unsplash.jpg"
+          }
+        },
+        "b167cdc5-f6e4-4bb7-b4f2-a15eae512026": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "tea",
+            "category_text": "紅茶",
+            "category_img": "shopify:\/\/shop_images\/manki-kim-L82-kkEBOd0-unsplash.jpg"
+          }
+        },
+        "7a61a3be-fb0a-4803-ad9e-c0cdc2dd44ce": {
+          "type": "category_select",
+          "settings": {
+            "category-collection": "goods-1",
+            "category_text": "はちみつグッズ",
+            "category_img": "shopify:\/\/shop_images\/kelly-sikkema-clw6dHJYusQ-unsplash_1_c26c0860-664f-4d23-ae86-c5fe313eae33.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "c022ecad-56d1-4d32-bc21-d34b3f8e0a07",
+        "1bfd07d6-2cfb-42ee-86f2-2b32c65d7db6",
+        "688bb75c-e200-4338-8c57-68c28c57ee88",
+        "956aedc0-26ee-4a3f-b08e-6c9d094fc350",
+        "124a58bf-8700-4bb2-9193-8be8a512ed8b",
+        "dd8c037a-8154-4723-a77a-2d37897c81ec",
+        "b167cdc5-f6e4-4bb7-b4f2-a15eae512026",
+        "7a61a3be-fb0a-4803-ad9e-c0cdc2dd44ce"
+      ],
+      "settings": {
+        "custom-category_title-en": "category",
+        "custom-category_title-ja": "カテゴリー",
+        "custom-category_text": 18,
+        "custom-category_text-md": 18,
+        "custom-category_text-sm": 14,
+        "custom-category_margin": 100,
+        "custom-category_margin-sm": 110
+      }
+    },
+    "1646220903085e7cb4": {
+      "type": "custom-blog",
+      "settings": {
+        "custom-blog_title": "blog",
+        "custom-blog_tiny": "ブログ",
+        "custom-blog": "blog",
+        "blog-post_limit": 3,
+        "custom-blog_button": "ブログ一覧",
+        "custom-blog_button-url": "shopify:\/\/blogs\/blog",
+        "custom-blog_margin": 270,
+        "custom-blog_margin-md": 160
+      }
+    },
+    "164552921100436266": {
+      "type": "custom-information",
+      "settings": {
+        "custom-info_title": "information",
+        "custom-info_tiny": "お知らせ",
+        "information": "information",
+        "info-post_limit": 3,
+        "custom-info_button": "お知らせ一覧",
+        "custom-info_button-url": "shopify:\/\/blogs\/information",
+        "custom-info_margin": 270,
+        "custom-info_margin-md": 145
+      }
+    },
+    "1646398400098e3ed2": {
+      "type": "custom-insta",
+      "settings": {
+        "instagram_title": "instagram",
+        "instagram_account": "haruno_hachimitsu",
+        "twitter_account-url": "https:\/\/www.instagram.com\/haruno_hachimitsu\/",
+        "twitter_margin": 235,
+        "twitter_margin-md": 120
+      }
+    },
+    "16462952701df6a8e1": {
+      "type": "custom-twitter",
+      "settings": {
+        "twitter_title": "twitter",
+        "twitter_account": "kyan_8gi",
+        "twitter_account-url": "https:\/\/twitter.com\/kyan_8gi",
+        "twitter_margin": 140,
+        "twitter_margin-md": 140
+      }
+    },
+    "1646469412ee8ddff0": {
+      "type": "custom-banner",
+      "settings": {
+        "banner_title-en": "line",
+        "banner_title-ja": "公式LINEアカウント",
+        "banner_image-medium": "shopify:\/\/shop_images\/benyamin-bohlouli-Rcj302Npzis-unsplash_1_-min.jpg",
+        "banner_text": "はるのはちみつの<br>\n公式LINEでは、おトクな<br>\n情報やイベント・新商品の<br>\n情報をお届けいたします！<br>",
+        "banner_button-text": "公式LINE",
+        "banner_button-url": "",
+        "banner_margin": 110,
+        "banner_margin-md": 80
+      }
+    }
+  },
+  "order": [
+    "16457683485b13d0d5",
+    "1645428946ce5c2f99",
+    "1643186412a82c9475",
+    "164524567968e6abb6",
+    "16456705618c71dbd4",
+    "16461057492242a72e",
+    "1646220903085e7cb4",
+    "164552921100436266",
+    "1646398400098e3ed2",
+    "16462952701df6a8e1",
+    "1646469412ee8ddff0"
+  ]
+}

@@ -1,0 +1,126 @@
+<section class="about">
+  <div class="about__inner">
+    <div class="about__unit">
+      <div class="about__img">
+        <img src="{{ section.settings.custom-about_image-large | img_url: 'master' }}" alt="">
+      </div>
+      <div class="about__content">
+        <h2 class="about__title custom-title">{{ section.settings.custom-about_title-en }}</h2>
+        <p class="about__tiny custom-title_sub">{{ section.settings.custom-about_title-ja }}</p>
+        <div class="about__text">
+          <p>
+            {{ section.settings.custom-about_text }}
+          </p>
+        </div>
+        <div class="about__button">
+          <a href="{{ section.settings.custom-about_button-url }}" class="c-button _white">{{ section.settings.custom-about_button-text }}</a>
+        </div>    
+      </div>
+    </div>
+    <div class="about__box">
+      <div class="about__dec-img">
+        <img src="{{ section.settings.custom-about_image-medium | img_url: 'master' }}" alt="" class="_top">
+        <img src="{{ section.settings.custom-about_image-small | img_url: 'master' }}" alt="" class="_bottom">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .about__unit {
+    margin-bottom: {{ section.settings.custom-about_margin }}px;
+  }
+  @media screen and (max-width: 980px) {
+    .about__unit {
+      margin-bottom: 0;
+    }
+    .about__inner {
+      padding-bottom: {{ section.settings.custom-about_margin_lg }}px;
+    }
+  @media screen and (max-width: 768px) {
+    .about__inner {
+      padding-bottom: {{ section.settings.custom-about_margin_md }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "カスタムABOUT",
+    "class": "width1200",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "custom-about_image-large",
+        "label": "大サイズの画像を選択してください"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom-about_image-medium",
+        "label": "中(横型)サイズの画像を選択してください"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom-about_image-small",
+        "label": "中(縦型)サイズの画像を選択してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-about_title-en",
+        "label": "英語タイトルを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-about_title-ja",
+        "label": "日本語タイトルを入力してください"
+      },
+      {
+        "type": "textarea",
+        "id": "custom-about_text",
+        "label": "テキストを入力してください"
+      },
+      {
+        "type": "text",
+        "id": "custom-about_button-text",
+        "label": "ボタンのテキストを入力してください"
+      },
+      {
+        "type": "url",
+        "id": "custom-about_button-url",
+        "label": "ボタンのリンクを入力してください"
+      },
+      {
+        "type": "range",
+        "id": "custom-about_margin",
+        "min": 60,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "ABOUT下の余白(pc)"
+      },
+      {
+        "type": "range",
+        "id": "custom-about_margin_lg",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "ABOUT下の余白(〜980px)"
+      },
+      {
+        "type": "range",
+        "id": "custom-about_margin_md",
+        "min": 0,
+        "max": 250,
+        "step": 5,
+        "default": 120,
+        "label": "ABOUT下の余白(〜768px)"
+      }
+    ],
+    "presets": [
+     {
+       "name": "カスタムアバウト"
+     }
+    ]
+  }
+{% endschema %}
