@@ -70,10 +70,16 @@
       "type": "product-recommendations",
       "settings": {
       }
+    },
+    "product-fixed-button": {
+      "type": "product-fixed-button",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "product-fixed-button"
   ]
 }
