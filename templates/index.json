@@ -97,17 +97,6 @@
         "custom-media_margin-md": 80
       }
     },
-    "164524567968e6abb6": {
-      "type": "custom-movie",
-      "settings": {
-        "custom-movie_title": "MOVIE",
-        "custom-movie_sub": "はちみつができるまで",
-        "custom-movie_image": "shopify:\/\/shop_images\/movie-thumb.jpg",
-        "custom-movie_url": "https:\/\/www.youtube.com\/embed\/bGEk8jwZwRo?rel=0",
-        "custom-movie_margin": 180,
-        "custom-movie_margin-md": 110
-      }
-    },
     "16456705618c71dbd4": {
       "type": "custom-ranking",
       "settings": {
@@ -117,6 +106,17 @@
         "rank-limit": 4,
         "rank-margin": 120,
         "rank-margin_md": 120
+      }
+    },
+    "164524567968e6abb6": {
+      "type": "custom-movie",
+      "settings": {
+        "custom-movie_title": "MOVIE",
+        "custom-movie_sub": "はちみつができるまで",
+        "custom-movie_image": "shopify:\/\/shop_images\/movie-thumb.jpg",
+        "custom-movie_url": "https:\/\/www.youtube.com\/embed\/bGEk8jwZwRo?rel=0",
+        "custom-movie_margin": 180,
+        "custom-movie_margin-md": 110
       }
     },
     "16461057492242a72e": {
@@ -271,8 +271,8 @@
     "16457683485b13d0d5",
     "1645428946ce5c2f99",
     "1643186412a82c9475",
-    "164524567968e6abb6",
     "16456705618c71dbd4",
+    "164524567968e6abb6",
     "16461057492242a72e",
     "1646220903085e7cb4",
     "164552921100436266",
