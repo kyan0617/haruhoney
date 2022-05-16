@@ -32,7 +32,7 @@
                 {% if product.price_varies %}
                   {{ product.price_min | money }} 〜 {{ product.price_max | money }}
                 {% else %}
-                  {{ product.price | money }}円
+                  {{ product.price | money }}
                 {% endif %}
                 </p>
                 <span class="ranking__include-tax">（税込）</span>
