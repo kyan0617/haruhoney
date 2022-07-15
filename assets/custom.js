@@ -34,3 +34,23 @@ $(function() {
     $(this).toggleClass('is_active');
   });
 });
+
+//追従ボタン
+const observer = new IntersectionObserver((entries) => {
+
+  for (const e of entries) {
+    const fixedButton = document.querySelector('.js-fixed-button');
+    if (e.isIntersecting) {
+      fixedButton.classList.add('isHide');
+      console.log('isHide');
+    } else {
+      fixedButton.classList.remove('isHide');
+    }
+  }
+});
+
+observer.observe(document.querySelector('.product-form__submit'));
+
+//購入するボタンをクリックでオプションを表示
+
+

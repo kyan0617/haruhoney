@@ -1,0 +1,19 @@
+<div class="product-card ">
+  <a href="{{ product. url }}" class="product-card__link">
+    <div class="product-card__image">
+      <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
+      {% for tag in product.tags %}
+        {% if tag contains '母の日ギフト' %}
+          <span class="product-card__tag product-card__tag--limited">母の日<br>ギフト</span>
+        {% endif%}
+      {% endfor %}
+    </div>
+    <div class="product-card__tags">
+      {% for tag in product.tags %}
+        <span class="product-card__tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <h2 class="product-card__title">{{ product.title }}</h2>
+    <p class="product-card__price">{{ product.price }}(税込)</p>
+  </a>
+</div>
