@@ -36,21 +36,38 @@ $(function() {
 });
 
 //追従ボタン
-const observer = new IntersectionObserver((entries) => {
+// const observer = new IntersectionObserver((entries) => {
 
-  for (const e of entries) {
-    const fixedButton = document.querySelector('.js-fixed-button');
-    if (e.isIntersecting) {
-      fixedButton.classList.add('isHide');
-      console.log('isHide');
-    } else {
-      fixedButton.classList.remove('isHide');
-    }
-  }
-});
+//   for (const e of entries) {
+//     const fixedButton = document.querySelector('.js-fixed-button');
+//     if (e.isIntersecting) {
+//       fixedButton.classList.add('isHide');
+//       console.log('isHide');
+//     } else {
+//       fixedButton.classList.remove('isHide');
+//     }
+//   }
+// });
 
-observer.observe(document.querySelector('.product-form__submit'));
+// observer.observe(document.querySelector('.product-form__submit'));
 
 //購入するボタンをクリックでオプションを表示
 
 
+//card-slider swiper
+var mySwiper = new Swiper('.swiper', {
+  loop: true,
+  speed: 800,
+  navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+  breakpoints: {
+    // 750px以上の場合
+    750: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
+    }
+  }
+});

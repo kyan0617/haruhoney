@@ -81,6 +81,23 @@
         "custom-about_margin_md": 105
       }
     },
+    "1660989895187ff267": {
+      "type": "card-slider",
+      "settings": {
+        "blog": "blog",
+        "collection": "",
+        "articles_range": 9,
+        "title": "recipe",
+        "image": "shopify:\/\/shop_images\/yuliia-tretynychenko-_agnXG7oD-4-unsplash.jpg",
+        "tag": false,
+        "button_text": "レシピ一覧",
+        "button_link": "shopify:\/\/blogs\/blog",
+        "padding_top_sp": 50,
+        "padding_bottom_sp": 50,
+        "padding_top_pc": 80,
+        "padding_bottom_pc": 80
+      }
+    },
     "1643186412a82c9475": {
       "type": "custom-media",
       "settings": {
@@ -233,14 +250,31 @@
         "custom-info_margin-md": 145
       }
     },
-    "1646398400098e3ed2": {
-      "type": "custom-insta",
+    "1660294036b213feaf": {
+      "type": "custom-review-list",
       "settings": {
-        "instagram_title": "instagram",
-        "instagram_account": "haruno_hachimitsu",
-        "twitter_account-url": "https:\/\/www.instagram.com\/haruno_hachimitsu\/",
-        "twitter_margin": 235,
-        "twitter_margin-md": 120
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all_products",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16462952701df6a8e1": {
@@ -265,19 +299,31 @@
         "banner_margin": 110,
         "banner_margin-md": 80
       }
+    },
+    "1646398400098e3ed2": {
+      "type": "custom-insta",
+      "settings": {
+        "instagram_title": "instagram",
+        "instagram_account": "haruno_hachimitsu",
+        "twitter_account-url": "https:\/\/www.instagram.com\/haruno_hachimitsu\/",
+        "twitter_margin": 235,
+        "twitter_margin-md": 120
+      }
     }
   },
   "order": [
     "16457683485b13d0d5",
     "1645428946ce5c2f99",
+    "1660989895187ff267",
     "1643186412a82c9475",
     "164524567968e6abb6",
     "16456705618c71dbd4",
     "16461057492242a72e",
     "1646220903085e7cb4",
     "164552921100436266",
-    "1646398400098e3ed2",
+    "1660294036b213feaf",
     "16462952701df6a8e1",
-    "1646469412ee8ddff0"
+    "1646469412ee8ddff0",
+    "1646398400098e3ed2"
   ]
 }

@@ -1,0 +1,199 @@
+{% assign blog = section.settings.blog %}
+{% assign collection = section.settings.collection %}
+
+<div class="isolate page-width">
+  <div class="custom-card-slider">
+    <div class="custom-card-slider__inner section-{{ section.id }}">
+      <h2 class="title h2 custom-en-title custom-card-slider__heading">{{ section.settings.title }}</h2>
+      <div class="custom-card-slider__main swiper">
+        <div class="custom-card-slider__list swiper-wrapper">
+          {% if blog != blank %}
+            {% for article in blog.articles limit: section.settings.articles_range %}
+              <div class="custom-card-slider__item swiper-slide">
+                <a href="{{ article.url }}" class="custom-card-slider__link">
+                  <div class="custom-card-slider__img">
+                    {% if article.image != blank %}
+                      <img src="{{ article.image.src | image_url: width: 600 }}" alt="">
+                    {% else %}
+                      <img src="{{ section.settings.image | image_url: width: 600 }}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="custom-card-slider__content">
+                    <div class="custom-card-slider__content-text">
+                      <p class="custom-card-slider__title">
+                        {{ article.title  | truncate: 28 | escape }}
+                      </p>
+                      <p class="custom-card-slider__text">
+                        {{ article.excerpt_or_content | strip_html | truncate: 32 }}
+                      </p>
+                    </div>
+                    <div class="custom-card-slider__details">
+                      <span class="custom-card-slider__date">{{ article.updated_at | date: '%Y.%m.%d' }}</span>
+                      {% if section.settings.tag != blank %}
+                        {% for tag in article.tags limit: 1 %}
+                          <span class="custom-card-slider__tag">{{ tag }}</span>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% elsif collection != blank %}
+            {% for product in collection.products limit: section.settings.articles_range %}
+              <div class="custom-card-slider__item swiper-slide">
+                <a href="{{ product.url }}" class="custom-card-slider__link">
+                  <div class="custom-card-slider__img">
+                    {% if product.featured_image != blank %}
+                      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="">
+                    {% else %}
+                      <img src="{{ section.settings.image | image_url: width: 600 }}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="custom-card-slider__content">
+                    <div class="custom-card-slider__content-text">
+                      <p class="custom-card-slider__title">
+                        {{ product.title  | truncate: 28 | escape }}
+                      </p>
+                      <p class="custom-card-slider__text">
+                        {{ product.description | strip_html | truncate: 32 }}
+                      </p>
+                    </div>
+                    <div class="custom-card-slider__details">
+                      {% if section.settings.tag != blank %}
+                        {% for tag in product.tags limit: 1 %}
+                          <span class="custom-card-slider__tag">{{ tag }}</span>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      {% if section.settings.button_text != blank %}
+        <div class="custom-card-slider__button">
+          <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_text }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_sp }}px;
+    padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_pc }}px;
+      padding-bottom: {{ section.settings.padding_bottom_pc }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "カードスライダー",
+  "class": "section",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "ブログを選択"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "コレクションを選択"
+    },
+    {
+      "type": "range",
+      "id": "articles_range",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "label": "記事数を選択",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "セクションタイトルを入力"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "サムネイルが設定されていない場合に表示する画像を選択"
+    },
+    {
+      "type": "checkbox",
+      "id": "tag",
+      "default": false,
+      "label": "タグを表示"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "ボタンのテキスト",
+      "default": "more"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "ボタンのURL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "上部の余白(モバイル)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "下部の余白（モバイル）",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_pc",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "上部の余白(パソコン)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_pc",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "下部の余白（パソコン）",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "カードスライダー"
+    }
+  ]
+}
+
+{% endschema %}
